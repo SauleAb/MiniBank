@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniBank.MVVM.Views.ConversionRequestView"
+             Title="ConversionRequestView">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label Text="Currency Converter"
+                   FontSize="Large"
+                   HorizontalOptions="Center"/>
+
+            <Entry  x:Name="FromCurrency"
+                    Placeholder="From Currency"
+                    MaxLength="3"
+                    TextTransform="Uppercase"/>
+            <Entry Placeholder="To Currency"/>
+            <Entry Placeholder="Amount"/>
+
+            <Button
+                x:Name="ConvertBtn"
+                Text="Convert"
+                Clicked="ConvertBtn_Clicked"
+                HorizontalOptions="Center" />
+            <Label Text="{Binding Source=FromCurrency, Path=Text}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

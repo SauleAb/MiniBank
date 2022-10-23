@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniBank.MVVM.Views.MiniBankView"
+             Title="MiniBankView">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">    
+            <Label Text="Mini Bank"
+                   FontSize="Large"
+                   HorizontalOptions="Center"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="DepositBtn"
+                        Text="Deposit"
+                        Grid.Row="0"
+                        Clicked="DepositBtn_Clicked"/>
+                <Button x:Name="WithdrawBtn"
+                        Text="Withdraw"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Clicked="WithdrawBtn_Clicked"/>
+                <Button x:Name="ConvertBtn"
+                        Text="Convert"
+                        Grid.Row="1"
+                        Clicked="ConvertBtn_Clicked"/>
+                <Button x:Name="BalanceBtn"
+                        Text="Balance"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Clicked="BalanceBtn_Clicked"/>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
