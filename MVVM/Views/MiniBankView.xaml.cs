@@ -19,7 +19,7 @@ public partial class MiniBankView : ContentPage
 
 	private void ConvertBtn_Clicked(object sender, EventArgs e)
 	{
-		Navigation.PushAsync(new ConversionRequestView());
+		Navigation.PushAsync(new Convert());
 	}
 
 	private void BalanceBtn_Clicked(object sender, EventArgs e)

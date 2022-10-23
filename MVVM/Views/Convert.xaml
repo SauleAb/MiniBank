@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MiniBank.MVVM.Views.ConversionRequestView"
-             Title="ConversionRequestView">
+             x:Class="MiniBank.MVVM.Views.Convert"
+             Title="Convert">
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
@@ -13,17 +13,19 @@
                    FontSize="Large"
                    HorizontalOptions="Center"/>
 
-            <Entry  x:Name="FromCurrency"
+            <Entry  x:Name="fromCurrency"
                     Placeholder="From Currency"
                     MaxLength="3"
+                    Completed="FromCurrency_Completed"
                     TextTransform="Uppercase"/>
-            <Entry  x:Name="To Currency"
+            <Entry  x:Name="toCurrency"
                     Placeholder="To Currency"
                     MaxLength="3"
+                    Completed="ToCurrency_Completed"
                     TextTransform="Uppercase"/>
             <Entry  x:Name="Amount"
                     Placeholder="Amount"
-                    MaxLength="3"
+                    Completed="Amount_Completed"
                     TextTransform="Uppercase"/>
 
             <Button
@@ -31,7 +33,9 @@
                 Text="Convert"
                 Clicked="ConvertBtn_Clicked"
                 HorizontalOptions="Center" />
-            <Label Text="{Binding Source=FromCurrency, Path=Text}"/>
+
+            <Label Text="{Binding Source={x:Reference Amount}, Path=Placeholder}"/>
+            <!--Path = ConvertedAmount-->
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
