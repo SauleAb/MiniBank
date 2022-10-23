@@ -17,8 +17,14 @@
                     Placeholder="From Currency"
                     MaxLength="3"
                     TextTransform="Uppercase"/>
-            <Entry Placeholder="To Currency"/>
-            <Entry Placeholder="Amount"/>
+            <Entry  x:Name="To Currency"
+                    Placeholder="To Currency"
+                    MaxLength="3"
+                    TextTransform="Uppercase"/>
+            <Entry  x:Name="Amount"
+                    Placeholder="Amount"
+                    MaxLength="3"
+                    TextTransform="Uppercase"/>
 
             <Button
                 x:Name="ConvertBtn"
