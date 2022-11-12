@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:MiniBank.MVVM.ViewModels" x:DataType="viewmodels:ConversionsViewModel"
              x:Class="MiniBank.MVVM.Views.Convert"
              Title="Convert">
     <ScrollView>
@@ -16,16 +17,16 @@
             <Entry  x:Name="fromCurrency"
                     Placeholder="From Currency"
                     MaxLength="3"
-                    Completed="FromCurrency_Completed"
+                    Text="{Binding Conversion.FromCurrency}"
                     TextTransform="Uppercase"/>
             <Entry  x:Name="toCurrency"
                     Placeholder="To Currency"
                     MaxLength="3"
-                    Completed="ToCurrency_Completed"
+                    Text="{Binding Conversion.ToCurrency}"
                     TextTransform="Uppercase"/>
             <Entry  x:Name="Amount"
                     Placeholder="Amount"
-                    Completed="Amount_Completed"
+                    Text="{Binding Conversion.Amount}"
                     Keyboard="Numeric"/>
 
             <Button
@@ -33,11 +34,6 @@
                 Text="Convert"
                 Clicked="ConvertBtn_Clicked"
                 HorizontalOptions="Center" />
-
-            <Label Text="{Binding Source={x:Reference Amount}, Path=Placeholder}" 
-                   HorizontalOptions="Center"/>
-            <!--Path = ConvertedAmount-->
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

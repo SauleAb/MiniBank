@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SQLite;
 
 namespace MiniBank.MVVM.Models
 {
+    [Table("Trades")]
     public class Trade
     {
         public string Client { get; set; }
